@@ -13,11 +13,12 @@ The skill helps developers clarify intent, expose ambiguity, and draft machine-c
 - validation plans
 - evidence requirements
 
-## Install
+## Install For Codex
 
 Copy the skill folder into your Codex skills directory:
 
 ```bash
+git clone https://github.com/openkedge/pdd-protocol-author.git
 mkdir -p ~/.codex/skills
 cp -R pdd-protocol-author ~/.codex/skills/
 ```
@@ -27,6 +28,76 @@ Then ask Codex:
 ```text
 Use $pdd-protocol-author to convert this requirement into a PDD bundle with structural, behavioral, and operational invariants.
 ```
+
+## Install For Claude Code
+
+Claude Code supports Agent Skills as folders containing a `SKILL.md` file and optional supporting files. Personal skills live in `~/.claude/skills/`; project skills live in `.claude/skills/` inside a repository.
+
+Install as a personal Claude Code skill:
+
+```bash
+git clone https://github.com/openkedge/pdd-protocol-author.git
+mkdir -p ~/.claude/skills
+cp -R pdd-protocol-author ~/.claude/skills/
+```
+
+Install as a project skill shared with a team:
+
+```bash
+git clone https://github.com/openkedge/pdd-protocol-author.git
+mkdir -p .claude/skills
+cp -R pdd-protocol-author .claude/skills/
+git add .claude/skills/pdd-protocol-author
+git commit -m "Add PDD Protocol Author skill"
+```
+
+Restart Claude Code after installing so it reloads available skills. Then ask:
+
+```text
+Use the PDD Protocol Author skill to convert this requirement into a protocol bundle.
+```
+
+Claude Code can also activate the skill automatically when your request matches the skill description.
+
+Reference: [Claude Code Agent Skills documentation](https://docs.claude.com/en/docs/claude-code/skills).
+
+## Install For Kiro
+
+Kiro supports Agent Skills from global and workspace skill folders. Global skills live in `~/.kiro/skills/`; workspace skills live in `.kiro/skills/` inside a project.
+
+Install as a global Kiro skill:
+
+```bash
+git clone https://github.com/openkedge/pdd-protocol-author.git
+mkdir -p ~/.kiro/skills
+cp -R pdd-protocol-author ~/.kiro/skills/
+```
+
+Install as a workspace skill:
+
+```bash
+git clone https://github.com/openkedge/pdd-protocol-author.git
+mkdir -p .kiro/skills
+cp -R pdd-protocol-author .kiro/skills/
+git add .kiro/skills/pdd-protocol-author
+git commit -m "Add PDD Protocol Author skill"
+```
+
+In Kiro, invoke it directly as a slash command:
+
+```text
+/pdd-protocol-author
+```
+
+or ask naturally:
+
+```text
+Convert this feature request into a PDD bundle with typed handshakes, invariants, validator plan, and evidence requirements.
+```
+
+Kiro IDE also supports importing skills from a local folder through the Agent Steering & Skills panel. If importing from GitHub, Kiro expects a URL pointing to a skill folder or `SKILL.md`; cloning and importing the local folder is the most reliable path for this repository layout.
+
+Reference: [Kiro Agent Skills documentation](https://kiro.dev/docs/skills/) and [Kiro CLI Agent Skills documentation](https://kiro.dev/docs/cli/skills/).
 
 ## Example
 
