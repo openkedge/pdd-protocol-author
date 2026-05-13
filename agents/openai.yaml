@@ -1,0 +1,4 @@
+interface:
+  display_name: "PDD Protocol Author"
+  short_description: "Turn requirements into protocol bundles"
+  default_prompt: "Use $pdd-protocol-author to convert this requirement into a PDD bundle with structural, behavioral, and operational invariants."

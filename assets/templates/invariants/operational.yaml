@@ -1,0 +1,7 @@
+operational_invariants:
+  - id: capability-manifest-conformance
+    statement: Runtime authority and resource usage must conform to capability-manifest.yaml.
+    severity: must
+    validation:
+      - sandbox_policy_check
+      - runtime_instrumentation
