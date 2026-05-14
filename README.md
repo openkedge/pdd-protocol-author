@@ -13,6 +13,47 @@ The skill helps developers clarify intent, expose ambiguity, and draft machine-c
 - validation plans
 - evidence requirements
 
+## Paper
+
+This skill is based on the arXiv paper [Protocol-Driven Development: Governing Generated Software Through Invariants and Evidence](https://arxiv.org/abs/2605.12981).
+
+The diagram below summarizes the paper's core governance loop: generated code is replaceable, while the protocol and evidence chain decide admission.
+
+```mermaid
+flowchart TD
+    A["Ambiguous human-language requirement"] --> B["Clarify intent and protocol boundary"]
+    B --> C["Protocol P = (S, B, O)"]
+
+    C --> S["Structural invariants<br/>schemas, interfaces, compatibility"]
+    C --> BE["Behavioral invariants<br/>state transitions, idempotence, failure semantics"]
+    C --> O["Operational invariants<br/>capabilities, resources, dependencies"]
+
+    S --> V["Validators and policy checks"]
+    BE --> V
+    O --> V
+
+    G["Implementation generator<br/>or human developer"] --> I["Candidate implementation"]
+    I --> V
+
+    V --> E["Evidence Chain<br/>test logs, traces, attestations, provenance"]
+    E --> D{"Protocol satisfied?"}
+    D -->|Yes| A1["Admit implementation"]
+    D -->|No| R["Reject, revise, or regenerate"]
+    R --> I
+```
+
+```bibtex
+@misc{he2026protocoldrivendevelopmentgoverninggenerated,
+      title={Protocol-Driven Development: Governing Generated Software Through Invariants and Evidence},
+      author={Jun He and Deying Yu},
+      year={2026},
+      eprint={2605.12981},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2605.12981},
+}
+```
+
 ## Install For Codex
 
 Copy the skill folder into your Codex skills directory:
