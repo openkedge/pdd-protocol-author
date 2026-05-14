@@ -43,14 +43,11 @@ flowchart TD
 ```
 
 ```bibtex
-@misc{he2026protocoldrivendevelopmentgoverninggenerated,
-      title={Protocol-Driven Development: Governing Generated Software Through Invariants and Evidence},
-      author={Jun He and Deying Yu},
-      year={2026},
-      eprint={2605.12981},
-      archivePrefix={arXiv},
-      primaryClass={cs.SE},
-      url={https://arxiv.org/abs/2605.12981},
+@article{he2026pdd,
+  title={Protocol-Driven Development: Governing Generated Software Through Invariants and Evidence},
+  author={He, Jun and Yu, Deying},
+  journal={arXiv preprint arXiv:2605.12981},
+  year={2026}
 }
 ```
 
